@@ -65,7 +65,6 @@ router.post('/identify', (req, res) => __awaiter(void 0, void 0, void 0, functio
             }
         });
         updatePrimaryContacts(allPrimaryContacts);
-        console.log(`Contain Email = ${hasEmail} and contain Number = ${hasNumber}`);
         if (hasEmail && hasNumber) {
             res.status(200).json(yield getAllContact(allPrimaryContacts));
             return;
@@ -124,7 +123,6 @@ router.post('/identify', (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(200).json(yield getAllContact(retriveContacts));
         return;
     }
-    // return res.json(contactResponse)
 }));
 function getAllContact(contactsResponse) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -155,7 +153,6 @@ function getAllContact(contactsResponse) {
                 contactResponse.contact.primaryContactId = element.linkedId;
             }
         });
-        // console.log(contactResponse);
         return contactResponse;
     });
 }
